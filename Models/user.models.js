@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
         required: true
     },
     surename: {
-        type: String,
+        type: String,  
         required: true
     },
     gender: {
