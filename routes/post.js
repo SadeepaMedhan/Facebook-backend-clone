@@ -69,4 +69,17 @@ router.get('/:id', async(req,res)=>{
     }
 })
 
+router.get('/', async(req,res)=>{
+    try {
+        const posts = await Post.find()
+        posts.map((p)=>{
+            if(p.user_id === req.body.userId){
+                res.send(p)
+            }
+        })
+    } catch (error) {
+        res.send(error)
+    }
+})
+
 module.exports = router
